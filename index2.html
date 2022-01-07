@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM manipulation</title>
+</head>
+
+<body>
+    <div id="divOne">
+        Content of the div one
+        <button onclick="clicked(divOne)">Click one</button>
+    </div>
+
+    <div id="divTwo">
+        Content of the div two which is different
+        <button onclick="clicked(divTwo)">Click two</button>
+    </div>
+    <div id="divThree">
+        Content is different
+        <button onclick="clicked(divThree)">Click three</button>
+    </div>
+
+    <br><br>
+    <button onclick="mywpage()">Whole page</button>
+
+
+    <script>
+        function mywpage() {
+            window.print();
+        }
+        function clicked(paravalue) {
+            var backup = document.body.innerHTML;
+            var divcontent = document.getElementById(paravalue).innerHTML;
+            document.body.innerHTML = divcontent;
+            window.print();
+            document.body.innerHTML = backup;
+        }
+    </script>
+</body>
+
+</html>

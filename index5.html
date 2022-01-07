@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dynamic Clock</title>
+</head>
+<body>
+    
+    <button onclick="clearInterval(clock)">Click Me</button>
+    <p id="time"></p>
+    <br><br><br>
+    <script>
+        var clock = setInterval(showTime, 1000);
+        function showTime() {
+        var d = new Date();
+        var res = d.toLocaleTimeString();
+        document.getElementById("time").innerHTML = res;
+        }
+        </script>
+</body>
+</html>
